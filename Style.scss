@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+@import "reset";
+
+@mixin flexbox($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+//!Colors
+//?Primary
+
+$Strong_Cyan: hsl(171, 66%, 44%);
+$Light_Blue: hsl(233, 100%, 69%);
+
+//?Neutral
+
+$Dark_Grayish_Blue: hsl(210, 10%, 33%);
+$Grayish_Blue: hsl(201, 11%, 66%);
+
+//!responsive
+$breakpoint : 64rem;
+body {
+    position: relative;
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: $Dark_Grayish_Blue;
+}
+
+.main {
+    padding-left: 1.625rem;
+    padding-right: 1.625rem;
+
+}
+p {
+    color: $Grayish_Blue;
+}
+
+
+.txt_c  {
+    text-align: center
+}
+
+.buttons {
+    @include flexbox(column, center, center);
+    gap: 1rem;
+    .button {
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.03rem;
+        color: white;
+        width: 20rem;
+        border-radius: 2rem;
+        border: 0 solid transparent;
+        outline: none;
+        padding: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .ios {
+        background-color: $Strong_Cyan;
+        border: 3px solid hsl(171, 66%, 40%);
+    }
+    .mac {
+        background-color: $Light_Blue;
+        border: 3px solid hsl(233, 100%, 65%);
+    }
+}
+
+.header {
+    background-image: url("images/bg-header-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem 1.625rem 0rem;
+
+    &__logo{
+        width: calmp(6.25rem, 10vw , 7.875rem);
+        margin-bottom: 3rem;
+    }
+
+    &__title {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        line-height: 2.2rem;
+    }
+}
+
+.section__title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    line-height: 2rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.section__p {
+    font-size: clamp(1rem, 1.25vw, 1.125rem);    ;
+    line-height: 2rem;
+    margin-bottom: 2.375rem;
+    padding: 0 0.5rem;
+}
+
+.mg_top {
+    margin-top: 8rem;
+}
+.mg_top2 {
+    margin-top: 6rem;
+}
+.mg_bot {
+    margin-bottom: 3rem;
+}
+.mg_bot2 {
+    margin-bottom: 4.5rem;
+}
+
+.section__subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem
+}
+
+.sectionOne__flexed {
+    @include flexbox(column, center, center);
+    gap: 3rem;
+}
+
+.sectionThree__flexed {
+    @include flexbox(column, center, center);
+    gap: 3rem;
+
+    .section__p {
+        margin-bottom: 0;
+    }
+    .container {
+        .icon {
+            margin-bottom: 2.25rem;
+        }
+    }
+
+}
+
+.leftPart {
+    width: clamp(20rem, 90vw, 46.875rem);
+}
+.deviceimg {
+    width: clamp(20.125rem, 90vw, 60rem);
+}
+
+.footer {
+    
+    background: hsl(201, 11%, 96%);
+    padding: 2.5rem 0rem;
+    font-weight: 600;
+
+    &__logo {
+        height: 2.875rem;
+        margin-bottom: 2.25rem;
+    }
+    p {
+        margin-bottom: 1.625rem;
+        color: hsl(210, 10%, 63%);
+    }
+
+    &__right {
+        @include flexbox(row, center, center);
+        gap: 2rem;
+    }
+}
+
+
+//!responsive
+@media (min-width : $breakpoint) {
+    .main {
+        padding : 0;
+    }   
+    
+    .buttons {
+        @include flexbox(row, center, center);
+        gap: 1rem;
+        .button {
+            width: 14.25rem;
+            &:hover {
+                opacity: 70%;
+                cursor: pointer;
+            }
+        }
+
+        .ios:hover {
+            opacity: 70%;
+            cursor: pointer;
+        }
+    }
+    
+    .header {
+        background-image: url("images/bg-header-desktop.png");
+        background-size: contain;
+        background-position: 50% 0%;
+        padding: 8.125rem 1.625rem 0rem;
+    
+        &__logo{
+            width: 6.25rem;
+        }
+
+        .section__p {
+            width: 48%;
+            margin-inline: auto ;
+        }
+
+        &__title {
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+    .section__title {
+        padding: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .section__p {
+        line-height: 2rem;
+        width: 51%;
+        margin-inline: auto;
+        margin-bottom: 5.25rem;
+    }
+
+    .sectionOne {
+        .sectionOne__flexed {
+            @include flexbox(row, center, center);
+            gap: 6rem;
+
+            .leftPart_container {
+                width: 60%;
+                height: 37rem;
+                overflow: hidden; 
+                position: relative;
+
+                .leftPart {
+                    position: absolute;
+                    top: 0rem;
+                    left: -2.375rem;                    
+                    object-fit: cover;
+                }
+              }
+              
+            .rightPart {
+                text-align: start;
+
+                .section__p {
+                    text-align: start;
+                    margin-inline:initial;
+                    padding: 0;
+                    margin-bottom: 4rem;
+                    width: 65%;
+                }
+            }
+        }
+
+    }
+    
+    .mg_top {
+        margin-top: 10rem;
+    }
+    .mg_top2 {
+        margin-top: 6rem;
+    }
+    .mg_bot {
+        margin-bottom: 3rem;
+    }
+    .mg_bot2 {
+        margin-bottom: 4.5rem;
+    }   
+
+   
+    .sectionThree__flexed {
+        @include flexbox(row, space-between, center);
+        gap: 2rem;
+        margin-inline: 6rem ;
+    
+        .section__p {
+            display: inline-block;
+            margin-bottom: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .container {
+            flex-grow: 1;
+            flex-basis: 0;
+            height: 13rem;
+            .icon {
+                height: 2.2rem;
+            }
+        }
+    
+    }
+    
+    .footer {
+        @include flexbox(row, space-between, center);
+        padding: 2.5rem 10rem;
+
+        &__left {
+            text-align: start;
+            display: grid;
+            gap: 6rem;
+            grid-template-areas: 
+            "one two three four";
+        
+            .one {
+                grid-area: one;
+            }
+            .two {
+                grid-area: two;
+            }
+            .three {
+                grid-area: three;
+            }
+            .four {
+                grid-area: four;
+            }
+
+            .part {
+                @include flexbox(column, space-between, flex-start);
+                gap: 1.5rem;
+            }
+        }
+    
+        &__logo {
+            margin-bottom: 0rem;
+            margin-right: 2rem;
+        }
+        p {
+            margin-bottom: 0rem;
+
+            &:hover {
+                cursor: pointer;
+                color: $Strong_Cyan;
+            }
+        }
+    
+        &__right {
+            svg:hover {
+                cursor: pointer;
+                path {
+                    fill: $Strong_Cyan;
+                }
+            }
+        }
+    }
+}
+
+

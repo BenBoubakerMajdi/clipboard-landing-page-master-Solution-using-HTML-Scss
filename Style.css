@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap"); /* Reset SCSS */
+/* Box sizing */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body, html {
+  min-height: 100%;
+  min-width: 100%;
+  line-height: 1;
+}
+
+/* Remove list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Remove default hyperlink styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  position: relative;
+  font-family: "Bai Jamjuree", sans-serif;
+  color: hsl(210, 10%, 33%);
+}
+
+.main {
+  padding-left: 1.625rem;
+  padding-right: 1.625rem;
+}
+
+p {
+  color: hsl(201, 11%, 66%);
+}
+
+.txt_c {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.buttons .button {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
+  color: white;
+  width: 20rem;
+  border-radius: 2rem;
+  border: 0 solid transparent;
+  outline: none;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.buttons .ios {
+  background-color: hsl(171, 66%, 44%);
+  border: 3px solid hsl(171, 66%, 40%);
+}
+.buttons .mac {
+  background-color: hsl(233, 100%, 69%);
+  border: 3px solid hsl(233, 100%, 65%);
+}
+
+.header {
+  background-image: url("images/bg-header-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 1.625rem 0rem;
+}
+.header__logo {
+  width: calmp(6.25rem, 10vw, 7.875rem);
+  margin-bottom: 3rem;
+}
+.header__title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 2.2rem;
+}
+
+.section__title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600;
+  line-height: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.section__p {
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 2rem;
+  margin-bottom: 2.375rem;
+  padding: 0 0.5rem;
+}
+
+.mg_top {
+  margin-top: 8rem;
+}
+
+.mg_top2 {
+  margin-top: 6rem;
+}
+
+.mg_bot {
+  margin-bottom: 3rem;
+}
+
+.mg_bot2 {
+  margin-bottom: 4.5rem;
+}
+
+.section__subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.sectionOne__flexed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.sectionThree__flexed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.sectionThree__flexed .section__p {
+  margin-bottom: 0;
+}
+.sectionThree__flexed .container .icon {
+  margin-bottom: 2.25rem;
+}
+
+.leftPart {
+  width: clamp(20rem, 90vw, 46.875rem);
+}
+
+.deviceimg {
+  width: clamp(20.125rem, 90vw, 60rem);
+}
+
+.footer {
+  background: hsl(201, 11%, 96%);
+  padding: 2.5rem 0rem;
+  font-weight: 600;
+}
+.footer__logo {
+  height: 2.875rem;
+  margin-bottom: 2.25rem;
+}
+.footer p {
+  margin-bottom: 1.625rem;
+  color: hsl(210, 10%, 63%);
+}
+.footer__right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 64rem) {
+  .main {
+    padding: 0;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .buttons .button {
+    width: 14.25rem;
+  }
+  .buttons .button:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
+  .buttons .ios:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
+  .header {
+    background-image: url("images/bg-header-desktop.png");
+    background-size: contain;
+    background-position: 50% 0%;
+    padding: 8.125rem 1.625rem 0rem;
+  }
+  .header__logo {
+    width: 6.25rem;
+  }
+  .header .section__p {
+    width: 48%;
+    margin-inline: auto;
+  }
+  .header__title {
+    margin-bottom: 1.5rem;
+  }
+  .section__title {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .section__p {
+    line-height: 2rem;
+    width: 51%;
+    margin-inline: auto;
+    margin-bottom: 5.25rem;
+  }
+  .sectionOne .sectionOne__flexed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+  }
+  .sectionOne .sectionOne__flexed .leftPart_container {
+    width: 60%;
+    height: 37rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .sectionOne .sectionOne__flexed .leftPart_container .leftPart {
+    position: absolute;
+    top: 0rem;
+    left: -2.375rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .sectionOne .sectionOne__flexed .rightPart {
+    text-align: start;
+  }
+  .sectionOne .sectionOne__flexed .rightPart .section__p {
+    text-align: start;
+    margin-inline: initial;
+    padding: 0;
+    margin-bottom: 4rem;
+    width: 65%;
+  }
+  .mg_top {
+    margin-top: 10rem;
+  }
+  .mg_top2 {
+    margin-top: 6rem;
+  }
+  .mg_bot {
+    margin-bottom: 3rem;
+  }
+  .mg_bot2 {
+    margin-bottom: 4.5rem;
+  }
+  .sectionThree__flexed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-inline: 6rem;
+  }
+  .sectionThree__flexed .section__p {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .sectionThree__flexed .container {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 13rem;
+  }
+  .sectionThree__flexed .container .icon {
+    height: 2.2rem;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 10rem;
+  }
+  .footer__left {
+    text-align: start;
+    display: grid;
+    gap: 6rem;
+    grid-template-areas: "one two three four";
+  }
+  .footer__left .one {
+    grid-area: one;
+  }
+  .footer__left .two {
+    grid-area: two;
+  }
+  .footer__left .three {
+    grid-area: three;
+  }
+  .footer__left .four {
+    grid-area: four;
+  }
+  .footer__left .part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .footer__logo {
+    margin-bottom: 0rem;
+    margin-right: 2rem;
+  }
+  .footer p {
+    margin-bottom: 0rem;
+  }
+  .footer p:hover {
+    cursor: pointer;
+    color: hsl(171, 66%, 44%);
+  }
+  .footer__right svg:hover {
+    cursor: pointer;
+  }
+  .footer__right svg:hover path {
+    fill: hsl(171, 66%, 44%);
+  }
+}/*# sourceMappingURL=Style.css.map */
